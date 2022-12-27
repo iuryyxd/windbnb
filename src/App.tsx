@@ -4,6 +4,7 @@ import styles from "./App.module.scss";
 import Stays, { StaysListProps } from "./components/Stays";
 import staysData from "./utils/stays.json";
 import Modal from "./components/Modal";
+import AOS from 'aos';
 
 export interface FilterItem {
   local: string | null;
@@ -18,6 +19,10 @@ function App() {
   function handleOpenModal() {
     setOpenModal(!openModal)
   }
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
 
   function handleFilter(filterInfo: FilterItem) {
 
@@ -42,10 +47,9 @@ function App() {
 
   return (
     <>
-    {/* filterItems={filter} */}
       {openModal && <Modal handleOpenModal={handleOpenModal} handleFilter={handleFilter}/>}
       <Header handleOpenModal={handleOpenModal} filterItems={filter} />
-      <Stays staysList={staysList} />
+      <Stays staysList={staysList} city={filter ? filter.local : null}/>
       <footer className={styles.app__footer}>
         <p>
           Desenvolvido por <a target="_blank" href="https://github.com/iuryyxd">Iury</a> - devChallenges.io

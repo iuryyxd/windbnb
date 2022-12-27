@@ -20,10 +20,10 @@ function Header({ handleOpenModal, filterItems }: HeaderProps) {
         />
 
         <nav className={styles.header__menu}>
-          <button className={styles.buttonLocal} onClick={handleOpenModal}>
-            {filterItems?.local ? filterItems.local : "Add local"}
+          <button className={`${styles.buttonLocal} ${filterItems?.local ? `${styles.on}` : ''}`} onClick={handleOpenModal}>
+            {filterItems?.local ? `${filterItems.local}, Finland` : "Add local"}
           </button>
-          <button className={styles.buttonGuests} onClick={handleOpenModal}>
+          <button className={`${styles.buttonGuests} ${filterItems?.guests ? `${styles.on}` : ''}`} onClick={handleOpenModal}>
             {filterItems?.guests ? `${filterItems.guests} guests` : "Add guests"}
           </button>
           <button className={styles.buttonSearch} onClick={handleOpenModal}>

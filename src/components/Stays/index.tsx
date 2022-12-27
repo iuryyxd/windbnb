@@ -16,17 +16,25 @@ export interface StaysListProps {
 
 interface StaysProps {
   staysList: StaysListProps[];
+  city: string | null;
 }
 
-function Stays({ staysList }: StaysProps) {
+function Stays({ staysList, city }: StaysProps) {
   return (
     <section className={`${styles.stays}`}>
       <div className={styles.stays__container}>
         <header className={styles.stays__header}>
-          <h1 className={styles.header__title}>Stays in Finland</h1>
-          <span className={styles.header__info}>{staysList.length} stay{staysList.length > 1 ? 's' : ''}</span>
+          <h1 className={styles.header__title}>
+            Stays in {city ? `${city},` : ""} Finland
+          </h1>
+          <span className={styles.header__info}>
+            {staysList.length} stay{staysList.length > 1 ? "s" : ""}
+          </span>
         </header>
 
+        {staysList.length === 0 && (
+          <div>We were unable to find stays with this filter applied!</div>
+        )}
         <main className={styles.stays__list}>
           {staysList.map((list) => (
             <StayCard

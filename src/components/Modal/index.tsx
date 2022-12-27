@@ -3,6 +3,7 @@ import { MdSearch, MdLocationPin } from "react-icons/md";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import styles from "./Modal.module.scss";
 import { FilterItem } from "../../App";
+import 'aos/dist/aos.css';
 
 interface ModalProps {
   handleOpenModal: () => void;
@@ -47,13 +48,13 @@ function Modal({ handleOpenModal, handleFilter }: ModalProps) {
   }, [countAdults, countChildren])
 
   return (
-    <div className={styles.modal}>
+    <div className={styles.modal} data-aos="flip-up" data-aos-duration="10000">
       <nav className={styles.modal__menu}>
-        <button className={styles.buttonLocal} onClick={() => setFilterType("local")}>
-          <p>LOCATION</p> <span>{local ? `${local}, Finland` : 'Add location'}</span>
+        <button className={`${styles.buttonLocal} ${filterType === "local" ? `${styles.on}` : ''}`} onClick={() => setFilterType("local")}>
+          <p>LOCATION</p> <span className={local ? `${styles.on}` : ''}>{local ? `${local}, Finland` : 'Add location'}</span>
         </button>
-        <button className={styles.buttonGuests} onClick={() => setFilterType("guests")}>
-          <p>GUESTS</p> <span>{guests === 0 ? 'Add guests' : guests}</span>
+        <button className={`${styles.buttonGuests} ${filterType === "guests" ? `${styles.on}` : ''}`} onClick={() => setFilterType("guests")}>
+          <p>GUESTS</p> <span className={guests > 0 ? `${styles.on}` : ''}>{guests === 0 ? 'Add guests' : guests}</span>
         </button>
         <button className={styles.buttonSearch} onClick={sendFilters}>
           <div>

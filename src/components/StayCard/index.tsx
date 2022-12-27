@@ -1,6 +1,7 @@
 import { StaysListProps } from "../Stays";
 import { MdStar } from "react-icons/md";
 import styles from "./StayCard.module.scss";
+import 'aos/dist/aos.css';
 
 function StayCard({
   superHost,
@@ -11,7 +12,7 @@ function StayCard({
   photo,
 }: StaysListProps) {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} data-aos="fade-up">
       <div
         style={{
           background: `url(${photo}) no-repeat center`,
