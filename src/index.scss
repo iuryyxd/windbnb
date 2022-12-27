@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-mo);
+}
+
+a {
+  text-decoration: none;
+}
+
+input, button {
+  outline: none;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+:root {
+  --weight-extrabold: 800;
+  --weight-bold: 700;
+  --weight-semibold: 600;
+  --weight-regular: 500;
+  --weight-light: 400;
+
+  --font-mo: 'Montserrat', sans-serif;
+  --font-mu: 'Mulish', sans-serif;
+
+  --color-gray: #333333;
+  --color-gray-1: #4F4F4F;
+  --color-gray-2: #BDBDBD;
+  --color-gray-3: #828282;
+  --color-red: #EB5757;
+  --color-white: #F2F2F2;
+}

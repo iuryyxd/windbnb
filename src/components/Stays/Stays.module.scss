@@ -1,0 +1,48 @@
+.stays {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.8125rem;
+
+  &__container {
+    width: 85%;
+    max-width: 85%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    .header__title {
+      font-family: var(--font-mo);
+      font-weight: var(--weight-bold);
+      font-size: 1.5rem;
+      line-height: 1.8125rem;
+      color: var(--color-gray);
+    }
+
+    .header__info {
+      font-family: var(--font-mo);
+      font-weight: var(--weight-regular);
+      font-size: .875rem;
+      line-height: 1.0625rem;
+      color: var(--color-gray-1);
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
