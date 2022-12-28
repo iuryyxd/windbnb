@@ -33,7 +33,7 @@
     .header__info {
       font-family: var(--font-mo);
       font-weight: var(--weight-regular);
-      font-size: .875rem;
+      font-size: 0.875rem;
       line-height: 1.0625rem;
       color: var(--color-gray-1);
     }
@@ -44,5 +44,17 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .stays {
+
+    &__list {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 }
