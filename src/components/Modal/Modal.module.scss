@@ -225,11 +225,14 @@
     padding: 49px 21px;
     &__menu {
       flex-direction: column;
+      box-shadow: none;
     }
 
     &__filter_guests,
     &__filter_local {
       margin-top: 150px;
+      width: 50%;
+      padding: 41px 0;
     }
 
     .buttonSearch {
