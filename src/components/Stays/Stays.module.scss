@@ -47,14 +47,27 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .stays {
+    &__list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 748px) {
+  .stays {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
 @media screen and (max-width: 425px) {
   .stays {
-
+    margin-top: 0px;
     &__list {
-      width: 100%;
-      display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
     }
   }
 }
